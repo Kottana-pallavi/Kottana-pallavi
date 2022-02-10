@@ -1,0 +1,7 @@
+#user input
+marks=float(input('enter the marks:'))
+#if condition
+if(Marks>=50):
+   print('pass')
+else:
+   print('fail')
