@@ -1,0 +1,15 @@
+A = [[1, 4, 2],
+     [-4, 5, -1],
+     [2, 1, 4]]
+B = [[2, 3, 1],
+     [1, 2, 3],
+     [-3, 0, 2]]
+matrixDiff = [[0, 0, 0],
+              [0, 0, 0],
+              [0, 0, 0]]
+for rows in range(len(A)):
+    for columns in range(len(A[0])):
+        matrixDiff[rows][columns] = A[rows][columns] - B[rows][columns]
+print("Printing the difference of matrices : ")
+for rows in matrixDiff:
+    print(*rows)
