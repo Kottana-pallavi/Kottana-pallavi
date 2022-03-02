@@ -1,15 +1,38 @@
-A = [[1, 4, 2],
-     [-4, 5, -1],
-     [2, 1, 4]]
-B = [[2, 3, 1],
-     [1, 2, 3],
-     [-3, 0, 2]]
-matrixDiff = [[0, 0, 0],
-              [0, 0, 0],
-              [0, 0, 0]]
-for rows in range(len(A)):
-    for columns in range(len(A[0])):
-        matrixDiff[rows][columns] = A[rows][columns] - B[rows][columns]
-print("Printing the difference of matrices : ")
-for rows in matrixDiff:
-    print(*rows)
+print("Enter the Row and Column Size of First Matrix: ", end="")
+rowOne = int(input())
+colOne = int(input())
+print("Enter the Row and Column Size of Second Matrix: ", end="")
+rowTwo = int(input())
+colTwo = int(input())
+
+if rowOne==rowTwo and colOne==colTwo:
+    matOne = []
+    print("\nEnter", rowOne*colOne, "Elements for First Matrix: ", end="")
+    for i in range(rowOne):
+        matOne.append([])
+        for j in range(colOne):
+            num = int(input())
+            matOne[i].append(num)
+
+    matTwo = []
+    print("\nEnter", rowTwo*colTwo, "Elements for Second Matrix: ", end="")
+    for i in range(rowTwo):
+        matTwo.append([])
+        for j in range(colTwo):
+            num = int(input())
+            matTwo[i].append(num)
+
+    matThree = []
+    for i in range(rowOne):
+        matThree.append([])
+        for j in range(colTwo):
+            sub = matOne[i][j] - matTwo[i][j]
+            matThree[i].append(sub)
+
+    print("\nSubtraction Result:")
+    for i in range(rowOne):
+        for j in range(colOne):
+            print(matThree[i][j], end=" ")
+        print()
+else:
+    print("\nOrder Mismatched!")
